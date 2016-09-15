@@ -15,7 +15,7 @@ var util = require('util');
  * Configuration
  */
 
-// Datasheet: http://www.silabs.com/Support%20Documents/TechnicalDocs/Si7020.pdf
+// Datasheet: http://www.silabs.com/Support%20Documents/TechnicalDocs/Si7021.pdf
 
 var
   RH_HOLD = 0xE5,
@@ -59,10 +59,10 @@ function ClimateSensor (hardware) {
 
   setTimeout(function () {
     self._readRegister(READ_IDl, 6, function(err, data){
-      if (data[0] == 0x14) { // 0x14 identifies si7020 according to the datasheet
+      if (data[0] == 0x15) { // 0x15 identifies si7021 according to the datasheet
         self.emit('ready');
       } else {
-        self.emit('error', new Error('Cannot connect to Si7020. Are you sure it\'s not a Si7005? Got id: ' + data[0].toString(16)));
+        self.emit('error', new Error('Cannot connect to Si7021. Are you sure it\'s a Si7021? Got id: ' + data[0].toString(16)));
       }
     });
   }, WAKE_UP_TIME);
