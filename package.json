@@ -1,13 +1,9 @@
 {
-  "name": "climate-si7020",
+  "name": "climate-si7021",
   "version": "0.1.1",
-  "description": "The library for using the Climate si7020 module for Tessel. Get temperature and humidity.",
+  "description": "The library for using the Climate si7021 module for Tessel. Get temperature and humidity.",
   "main": "index.js",
   "files": [ "index.js" ],
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:tessel/climate-si7020.git"
-  },
   "directories": {
     "example": "examples"
   },
